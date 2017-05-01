@@ -6,7 +6,7 @@
 //  Copyright © 2017 KIRIBAGUETTE. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class RestaurantsEntity {
     var name:String
@@ -17,6 +17,8 @@ class RestaurantsEntity {
     var gps_lat:Double
     var gps_long:Double
     var rate_count:Int
+    var picture_url:String
+    var picture:UIImage
     
     init(name:String,
          address:String,
@@ -25,7 +27,9 @@ class RestaurantsEntity {
          avg_rate:Double,
          gps_lat:Double,
          gps_long:Double,
-         rate_count:Int) {
+         rate_count:Int,
+         picture_url:String,
+         picture:UIImage) {
         self.name = name
         self.address = address
         self.zipcode = zipcode
@@ -34,6 +38,8 @@ class RestaurantsEntity {
         self.gps_lat = gps_lat
         self.gps_long = gps_long
         self.rate_count = rate_count
+        self.picture_url = picture_url
+        self.picture = picture
     }
     
     init() {
@@ -45,5 +51,7 @@ class RestaurantsEntity {
         self.gps_lat = 0
         self.gps_long = 0
         self.rate_count = 0
+        self.picture_url = ""
+        self.picture = UIImage()
     }
 }

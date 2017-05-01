@@ -18,6 +18,7 @@
 		523E73081EB79B3B00705329 /* RestaurantsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E73071EB79B3B00705329 /* RestaurantsRouter.swift */; };
 		52729F0C1EB7C41A00462D84 /* PictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52729F0B1EB7C41A00462D84 /* PictureCollectionViewCell.swift */; };
 		52729F0E1EB7E1D100462D84 /* MapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52729F0D1EB7E1D100462D84 /* MapCollectionViewCell.swift */; };
+		52729F101EB7EF0A00462D84 /* DescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52729F0F1EB7EF0A00462D84 /* DescriptionCollectionViewCell.swift */; };
 		6E3DC3F1CC5C7D4225CCAA82 /* Pods_La_Fourchette.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2559B9CF43435E333D299604 /* Pods_La_Fourchette.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		523E73071EB79B3B00705329 /* RestaurantsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestaurantsRouter.swift; path = Router/RestaurantsRouter.swift; sourceTree = "<group>"; };
 		52729F0B1EB7C41A00462D84 /* PictureCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureCollectionViewCell.swift; path = View/PictureCollectionViewCell.swift; sourceTree = "<group>"; };
 		52729F0D1EB7E1D100462D84 /* MapCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapCollectionViewCell.swift; path = View/MapCollectionViewCell.swift; sourceTree = "<group>"; };
+		52729F0F1EB7EF0A00462D84 /* DescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DescriptionCollectionViewCell.swift; path = View/DescriptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		5879F8E91A20BA3324BCC350 /* Pods-La Fourchette.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La Fourchette.release.xcconfig"; path = "Pods/Target Support Files/Pods-La Fourchette/Pods-La Fourchette.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 				523E72E91EB655B600705329 /* ViewController.swift */,
 				52729F0B1EB7C41A00462D84 /* PictureCollectionViewCell.swift */,
 				52729F0D1EB7E1D100462D84 /* MapCollectionViewCell.swift */,
+				52729F0F1EB7EF0A00462D84 /* DescriptionCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				523E72E81EB655B600705329 /* AppDelegate.swift in Sources */,
 				523E73041EB7858C00705329 /* RestaurantsInteractor.swift in Sources */,
 				523E73081EB79B3B00705329 /* RestaurantsRouter.swift in Sources */,
+				52729F101EB7EF0A00462D84 /* DescriptionCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

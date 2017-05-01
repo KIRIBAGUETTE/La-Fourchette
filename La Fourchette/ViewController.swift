@@ -40,14 +40,19 @@ class ViewController: UIViewController, restaurantsViewProtocol, UICollectionVie
         return 3
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath)
-            cell.backgroundColor = UIColor.red
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! PictureCollectionViewCell
+            cell.imageView.image = self.entity.picture
             return cell
         } else if indexPath.row == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath)
-            cell.backgroundColor = UIColor.orange
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "descriptionCell", for: indexPath) as! DescriptionCollectionViewCell
+            cell.Name.text = self.entity.name
+            cell.Address.text = self.entity.address + " " + self.entity.zipcode + " " + self.entity.city
+            cell.Average.text = String(self.entity.avg_rate) + "/10"
+            cell.Avis.text = String(self.entity.rate_count) + " avis sur LaFourchette"
+            cell.Cost.text = "Prix moyen à la carte de ce restaurant : 24€"
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mapCell", for: indexPath) as! MapCollectionViewCell
@@ -91,6 +96,7 @@ class ViewController: UIViewController, restaurantsViewProtocol, UICollectionVie
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(PictureCollectionViewCell.self, forCellWithReuseIdentifier: "imageCell")
+        collectionView.register(DescriptionCollectionViewCell.self, forCellWithReuseIdentifier: "descriptionCell")
         collectionView.register(MapCollectionViewCell.self, forCellWithReuseIdentifier: "mapCell")
         collectionView.backgroundColor = UIColor.white
         self.view.addSubview(collectionView)

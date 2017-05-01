@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import AlamofireImage
 import SwiftyJSON
 import CoreData
 
@@ -57,9 +58,26 @@ class RestaurantsInteractor: RestaurantsInteractorProtocol {
             if let rate_count = Json["data"]["rate_count"].int {
                 self.entity.rate_count = rate_count
             }
-            self.stockList()
+            if let picture_url = Json["data"]["pics_main"]["612x344"].string {
+                self.entity.picture_url = picture_url
+            }
+            self.downloadTopPicture()
         } else {
             self.presenter.errorRestaurantView(errorMessage: "Erreur API")
+        }
+    }
+    
+    // Téléchargement de la photo à mettre en haut de page
+    
+    func downloadTopPicture() {
+        Alamofire.request(self.entity.picture_url).responseImage { response in
+            if response.response?.statusCode == 200 {
+                self.entity.picture = response.result.value!
+                self.stockList()
+            } else {
+                self.presenter.errorRestaurantView(errorMessage: "Erreur Download Image")
+                print("Error")
+            }
         }
     }
     
@@ -106,6 +124,8 @@ class RestaurantsInteractor: RestaurantsInteractorProtocol {
         newRetaurant.setValue(self.entity.gps_lat, forKey: "gps_lat")
         newRetaurant.setValue(self.entity.gps_long, forKey: "gps_long")
         newRetaurant.setValue(self.entity.rate_count, forKey: "rate_count")
+        let imageData = NSData(data: UIImageJPEGRepresentation(self.entity.picture, 1.0)!)
+        newRetaurant.setValue(imageData, forKey: "picture")
         do {
             print("COREDATA : INSERT DATA")
             try context.save()

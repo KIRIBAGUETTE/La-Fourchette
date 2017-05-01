@@ -11,14 +11,14 @@ import SnapKit
 
 class PictureCollectionViewCell : UICollectionViewCell {
     
-    var image: UIImageView!
+    var imageView: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        image = UIImageView()
-        image.image = UIImage(named: "")
-        self.contentView.addSubview(image)
+        imageView = UIImageView()
+        imageView.contentMode = .scaleToFill
+        self.contentView.addSubview(imageView)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,7 +27,7 @@ class PictureCollectionViewCell : UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        image.snp.makeConstraints { (make) in
+        imageView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
     }
