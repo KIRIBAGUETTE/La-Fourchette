@@ -19,7 +19,7 @@ class DescriptionCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         Name = UILabel()
-        Name.font = UIFont(name: "HelveticaNeue-bold", size: 27)
+        Name.font = UIFont(name: "HelveticaNeue-bold", size: 30)
         Name.textColor = UIColor.black
         self.contentView.addSubview(Name)
 
@@ -39,7 +39,7 @@ class DescriptionCollectionViewCell: UICollectionViewCell {
         self.contentView.addSubview(Avis)
         
         Cost = UILabel()
-        Cost.font = UIFont(name: "HelveticaNeue", size: 17)
+        Cost.font = UIFont(name: "HelveticaNeue", size: 15)
         Cost.textColor = UIColor.black
         self.contentView.addSubview(Cost)
     }

@@ -17,7 +17,7 @@ class PictureCollectionViewCell : UICollectionViewCell {
         super.init(frame: frame)
         
         imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFit
         self.contentView.addSubview(imageView)
     }
     
