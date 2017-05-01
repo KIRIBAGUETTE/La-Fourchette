@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Restaurant {
+class RestaurantEntity {
     var name:String
     var street:String
     var zipcode:String
