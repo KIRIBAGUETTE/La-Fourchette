@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		523E72E81EB655B600705329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E72E71EB655B600705329 /* AppDelegate.swift */; };
 		523E72EA1EB655B600705329 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E72E91EB655B600705329 /* ViewController.swift */; };
-		523E72ED1EB655B600705329 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 523E72EB1EB655B600705329 /* Main.storyboard */; };
 		523E72F01EB655B600705329 /* La_Fourchette.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 523E72EE1EB655B600705329 /* La_Fourchette.xcdatamodeld */; };
 		523E72F21EB655B600705329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523E72F11EB655B600705329 /* Assets.xcassets */; };
-		523E72F51EB655B600705329 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 523E72F31EB655B600705329 /* LaunchScreen.storyboard */; };
+		523E73021EB77D6200705329 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E73011EB77D6200705329 /* Restaurant.swift */; };
+		523E73041EB7858C00705329 /* RestaurantsListGest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E73031EB7858C00705329 /* RestaurantsListGest.swift */; };
+		6E3DC3F1CC5C7D4225CCAA82 /* Pods_La_Fourchette.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2559B9CF43435E333D299604 /* Pods_La_Fourchette.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2559B9CF43435E333D299604 /* Pods_La_Fourchette.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_La_Fourchette.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		314B24D8C070AA76AD7E4046 /* Pods-La Fourchette.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La Fourchette.debug.xcconfig"; path = "Pods/Target Support Files/Pods-La Fourchette/Pods-La Fourchette.debug.xcconfig"; sourceTree = "<group>"; };
 		523E72E41EB655B600705329 /* La Fourchette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "La Fourchette.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		523E72E71EB655B600705329 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		523E72E91EB655B600705329 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		523E72EC1EB655B600705329 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		523E72EF1EB655B600705329 /* La_Fourchette.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = La_Fourchette.xcdatamodel; sourceTree = "<group>"; };
 		523E72F11EB655B600705329 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		523E72F41EB655B600705329 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		523E72F61EB655B600705329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		523E73011EB77D6200705329 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Restaurant.swift; path = Entity/Restaurant.swift; sourceTree = "<group>"; };
+		523E73031EB7858C00705329 /* RestaurantsListGest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestaurantsListGest.swift; path = Interactor/RestaurantsListGest.swift; sourceTree = "<group>"; };
+		5879F8E91A20BA3324BCC350 /* Pods-La Fourchette.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La Fourchette.release.xcconfig"; path = "Pods/Target Support Files/Pods-La Fourchette/Pods-La Fourchette.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E3DC3F1CC5C7D4225CCAA82 /* Pods_La_Fourchette.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EA95751E2C72E3C97CEF9F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				314B24D8C070AA76AD7E4046 /* Pods-La Fourchette.debug.xcconfig */,
+				5879F8E91A20BA3324BCC350 /* Pods-La Fourchette.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		523E72DB1EB655B600705329 = {
 			isa = PBXGroup;
 			children = (
 				523E72E61EB655B600705329 /* La Fourchette */,
 				523E72E51EB655B600705329 /* Products */,
+				4EA95751E2C72E3C97CEF9F6 /* Pods */,
+				F69A91CA1D76C0489CF3EC77 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +72,63 @@
 		523E72E61EB655B600705329 /* La Fourchette */ = {
 			isa = PBXGroup;
 			children = (
+				523E72FF1EB6575C00705329 /* Entity */,
+				523E72FE1EB6575100705329 /* Interactor */,
+				523E72FD1EB6574B00705329 /* Presenter */,
+				523E73001EB6576200705329 /* Router */,
+				523E72FC1EB6574600705329 /* View */,
 				523E72E71EB655B600705329 /* AppDelegate.swift */,
-				523E72E91EB655B600705329 /* ViewController.swift */,
-				523E72EB1EB655B600705329 /* Main.storyboard */,
 				523E72F11EB655B600705329 /* Assets.xcassets */,
-				523E72F31EB655B600705329 /* LaunchScreen.storyboard */,
 				523E72F61EB655B600705329 /* Info.plist */,
 				523E72EE1EB655B600705329 /* La_Fourchette.xcdatamodeld */,
 			);
 			path = "La Fourchette";
+			sourceTree = "<group>";
+		};
+		523E72FC1EB6574600705329 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				523E72E91EB655B600705329 /* ViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		523E72FD1EB6574B00705329 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		523E72FE1EB6575100705329 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				523E73031EB7858C00705329 /* RestaurantsListGest.swift */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		523E72FF1EB6575C00705329 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				523E73011EB77D6200705329 /* Restaurant.swift */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		523E73001EB6576200705329 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
+		F69A91CA1D76C0489CF3EC77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2559B9CF43435E333D299604 /* Pods_La_Fourchette.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 523E72F91EB655B600705329 /* Build configuration list for PBXNativeTarget "La Fourchette" */;
 			buildPhases = (
+				CFC0F9FF52BDCB016B3A712C /* [CP] Check Pods Manifest.lock */,
 				523E72E01EB655B600705329 /* Sources */,
 				523E72E11EB655B600705329 /* Frameworks */,
 				523E72E21EB655B600705329 /* Resources */,
+				B086179CF2830C82DEE5FE81 /* [CP] Embed Pods Frameworks */,
+				4748D591426CDA3CECD6A429 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -127,45 +194,74 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				523E72F51EB655B600705329 /* LaunchScreen.storyboard in Resources */,
 				523E72F21EB655B600705329 /* Assets.xcassets in Resources */,
-				523E72ED1EB655B600705329 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4748D591426CDA3CECD6A429 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-La Fourchette/Pods-La Fourchette-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B086179CF2830C82DEE5FE81 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-La Fourchette/Pods-La Fourchette-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFC0F9FF52BDCB016B3A712C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		523E72E01EB655B600705329 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				523E73021EB77D6200705329 /* Restaurant.swift in Sources */,
 				523E72F01EB655B600705329 /* La_Fourchette.xcdatamodeld in Sources */,
 				523E72EA1EB655B600705329 /* ViewController.swift in Sources */,
 				523E72E81EB655B600705329 /* AppDelegate.swift in Sources */,
+				523E73041EB7858C00705329 /* RestaurantsListGest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		523E72EB1EB655B600705329 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				523E72EC1EB655B600705329 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		523E72F31EB655B600705329 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				523E72F41EB655B600705329 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		523E72F71EB655B600705329 /* Debug */ = {
@@ -263,6 +359,7 @@
 		};
 		523E72FA1EB655B600705329 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 314B24D8C070AA76AD7E4046 /* Pods-La Fourchette.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2K32P84892;
@@ -276,6 +373,7 @@
 		};
 		523E72FB1EB655B600705329 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5879F8E91A20BA3324BCC350 /* Pods-La Fourchette.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2K32P84892;
