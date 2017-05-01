@@ -8,9 +8,9 @@
 
 import Foundation
 
-class RestaurantEntity {
+class RestaurantsEntity {
     var name:String
-    var street:String
+    var address:String
     var zipcode:String
     var city:String
     var avg_rate:Double
@@ -19,7 +19,7 @@ class RestaurantEntity {
     var rate_count:Int
     
     init(name:String,
-         street:String,
+         address:String,
          zipcode:String,
          city:String,
          avg_rate:Double,
@@ -27,12 +27,23 @@ class RestaurantEntity {
          gps_long:Double,
          rate_count:Int) {
         self.name = name
-        self.street = street
+        self.address = address
         self.zipcode = zipcode
         self.city = city
         self.avg_rate = avg_rate
         self.gps_lat = gps_lat
         self.gps_long = gps_long
         self.rate_count = rate_count
+    }
+    
+    init() {
+        self.name = ""
+        self.address = ""
+        self.zipcode = ""
+        self.city = ""
+        self.avg_rate = 0
+        self.gps_lat = 0
+        self.gps_long = 0
+        self.rate_count = 0
     }
 }

@@ -11,6 +11,7 @@ import UIKit
 class RootRouter {
     
     func configWindow(window: UIWindow) {
+        print("VIEW : CONFIG")
         window.makeKeyAndVisible()
         window.rootViewController = RestaurantsRouter.configProject()
     }

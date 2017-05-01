@@ -9,7 +9,7 @@
 import UIKit
 
 protocol restaurantsViewProtocol: class {
-    var presenter:RestaurantsPresenterViewProtocol! { get set }
+    var presenter:RestaurantsPresenterDataProtocol! { get set }
     
     func showRestautantData()
 }
@@ -17,14 +17,11 @@ protocol restaurantsViewProtocol: class {
 class ViewController: UIViewController, restaurantsViewProtocol {
 
     // Reference vers l'interface Presenter
-    var presenter: RestaurantsPresenterViewProtocol!
+    var presenter: RestaurantsPresenterDataProtocol!
     
     override func viewDidLoad() {
-        print("demarrage")
         super.viewDidLoad()
-        print("la")
-        self.presenter.updateRestaurantView()
-        print("bas")
+        self.presenter.updateDataInformation()
         // Do any additional setup after loading the view, typically from a nib.
     }
 

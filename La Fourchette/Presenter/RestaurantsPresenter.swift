@@ -31,12 +31,13 @@ class RestaurantsPresenter: RestaurantsPresenterViewProtocol, RestaurantsPresent
     var router:RestaurantsRouterProtocol!
     
     func updateDataInformation() {
+        print("DATAS : UPDATE")
         self.interactor.updateList()
     }
     
     func updateRestaurantView() {
-        print("par ici")
-        self.interactor.updateList()
+        print("VIEW : UPDATE")
+        self.view.showRestautantData()
     }
     
 }
