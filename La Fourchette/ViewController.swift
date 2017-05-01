@@ -12,6 +12,7 @@ protocol restaurantsViewProtocol: class {
     var presenter:RestaurantsPresenterDataProtocol! { get set }
     
     func showRestautantData()
+    func showRestautantErrorMessage(errorMessage:String)
 }
 
 class ViewController: UIViewController, restaurantsViewProtocol {
@@ -32,6 +33,10 @@ class ViewController: UIViewController, restaurantsViewProtocol {
     
     func showRestautantData() {
         print("On affiche les informations du restaurant")
+    }
+    
+    func showRestautantErrorMessage(errorMessage:String) {
+        print("POPUP ERROR \(errorMessage)")
     }
 
 

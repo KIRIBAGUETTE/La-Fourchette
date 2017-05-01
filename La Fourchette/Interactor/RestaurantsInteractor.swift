@@ -28,32 +28,36 @@ class RestaurantsInteractor: RestaurantsInteractorProtocol {
     
     func deserialiseList(Json:JSON) {
         print("DATAS : DESERIALISATION")
-        let restaurant:RestaurantsEntity = RestaurantsEntity()
-        if let name = Json["data"]["name"].string {
-            restaurant.name = name
+        if Json["result"].int == 1 {
+            let restaurant:RestaurantsEntity = RestaurantsEntity()
+            if let name = Json["data"]["name"].string {
+                restaurant.name = name
+            }
+            if let address = Json["data"]["address"].string {
+                restaurant.address = address
+            }
+            if let zipcode = Json["data"]["zipcode"].string {
+                restaurant.zipcode = zipcode
+            }
+            if let city = Json["data"]["city"].string {
+                restaurant.city = city
+            }
+            if let avg_rate = Json["data"]["avg_rate"].double {
+                restaurant.avg_rate = avg_rate
+            }
+            if let gps_long = Json["data"]["gps_long"].double {
+                restaurant.gps_long = gps_long
+            }
+            if let gps_lat = Json["data"]["gps_lat"].double {
+                restaurant.gps_lat = gps_lat
+            }
+            if let rate_count = Json["data"]["rate_count"].int {
+                restaurant.rate_count = rate_count
+            }
+            self.stockList(restaurant:restaurant)
+        } else {
+            self.presenter.errorRestaurantView(errorMessage: "Erreur API")
         }
-        if let address = Json["data"]["address"].string {
-            restaurant.address = address
-        }
-        if let zipcode = Json["data"]["zipcode"].string {
-            restaurant.zipcode = zipcode
-        }
-        if let city = Json["data"]["city"].string {
-            restaurant.city = city
-        }
-        if let avg_rate = Json["data"]["avg_rate"].double {
-            restaurant.avg_rate = avg_rate
-        }
-        if let gps_long = Json["data"]["gps_long"].double {
-            restaurant.gps_long = gps_long
-        }
-        if let gps_lat = Json["data"]["gps_lat"].double {
-            restaurant.gps_lat = gps_lat
-        }
-        if let rate_count = Json["data"]["rate_count"].int {
-            restaurant.rate_count = rate_count
-        }
-        self.stockList(restaurant:restaurant)
     }
     
     // Stocker les informations du restaurant dans le CoreData
@@ -74,10 +78,12 @@ class RestaurantsInteractor: RestaurantsInteractorProtocol {
                 do {
                     try context.save()
                 } catch {
+                    self.presenter.errorRestaurantView(errorMessage: "Erreur CoreData")
                     print("Error")
                 }
             }
         } catch {
+            self.presenter.errorRestaurantView(errorMessage: "Erreur CoreData")
             print("ERROR")
         }
     }
@@ -100,11 +106,12 @@ class RestaurantsInteractor: RestaurantsInteractorProtocol {
         do {
             print("COREDATA : INSERT DATA")
             try context.save()
+            self.presenter.updateRestaurantView()
         } catch {
+            self.presenter.errorRestaurantView(errorMessage: "Erreur CoreData")
             print("Error during saving")
         }
-
-        self.presenter.updateRestaurantView()
+        
     }
     
     // Recupérer les informations du restaurant de l'API
@@ -115,7 +122,11 @@ class RestaurantsInteractor: RestaurantsInteractorProtocol {
             if response.result.isSuccess {
                 if response.response?.statusCode == 200 {
                     self.deserialiseList(Json: JSON(response.result.value!))
+                } else {
+                    self.presenter.errorRestaurantView(errorMessage: "Erreur URL/API")
                 }
+            } else {
+                
             }
         }
     }

@@ -12,6 +12,7 @@ import Foundation
 
 protocol RestaurantsPresenterViewProtocol: class {
     func updateRestaurantView()
+    func errorRestaurantView(errorMessage:String)
 }
 
 // Protocol d'Interactor à Presenter
@@ -38,6 +39,10 @@ class RestaurantsPresenter: RestaurantsPresenterViewProtocol, RestaurantsPresent
     func updateRestaurantView() {
         print("VIEW : UPDATE")
         self.view.showRestautantData()
+    }
+    
+    func errorRestaurantView(errorMessage:String) {
+        self.view.showRestautantErrorMessage(errorMessage:errorMessage)
     }
     
 }
