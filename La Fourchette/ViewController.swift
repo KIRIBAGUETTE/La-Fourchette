@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import SnapKit
 
 protocol restaurantsViewProtocol: class {
     var presenter:RestaurantsPresenterDataProtocol! { get set }
@@ -40,6 +41,18 @@ class ViewController: UIViewController, restaurantsViewProtocol, UICollectionVie
     }
     
     func showRestautantErrorMessage(errorMessage:String) {
+        let errorView:UIView = UIView()
+        errorView.backgroundColor = UIColor.red
+        let labelError:UILabel = UILabel()
+        errorView.addSubview(labelError)
+        labelError.text = errorMessage
+        self.view.addSubview(errorView)
+        errorView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        labelError.snp.makeConstraints { (make) in
+            make.center.equalTo(errorView.snp.center)
+        }
         print("POPUP ERROR \(errorMessage)")
     }
 }

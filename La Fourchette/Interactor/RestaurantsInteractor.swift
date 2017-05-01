@@ -27,7 +27,7 @@ class RestaurantsInteractor: RestaurantsInteractorProtocol {
     
     var entity:RestaurantsEntity!
     
-    let url:String = "https://api.lafourchette.com/api?key=IPHONEPRODEDCRFV&method=restaurant_get_info&id_restaurant=6861"
+    let url:String = "https://api.lafourchette.com/api?key=IPHONEPRODEDCRFV&method=restaurant_get_info&id_restaurant=14163"
     
     // Deserialiser les informations du restaurant reçue de l'API
     
@@ -137,6 +137,56 @@ class RestaurantsInteractor: RestaurantsInteractorProtocol {
         
     }
     
+    // Mode OFFLINE
+    
+    func takeInformationFromCoreDate() {
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Restaurant")
+        request.returnsObjectsAsFaults = false
+        do {
+            let results = try context.fetch(request)
+            if results.count != 0 {
+                for result in results as! [NSManagedObject] {
+                    if let address = result.value(forKey: "address") as? String {
+                        self.entity.address = address
+                    }
+                    if let name = result.value(forKey: "name") as? String {
+                        self.entity.name = name
+                    }
+                    if let zipcode = result.value(forKey: "zipcode") as? String {
+                        self.entity.zipcode = zipcode
+                    }
+                    if let city = result.value(forKey: "city") as? String {
+                        self.entity.city = city
+                    }
+                    if let avg_rate = result.value(forKey: "avg_rate") as? Double {
+                        self.entity.avg_rate = avg_rate
+                    }
+                    if let gps_lat = result.value(forKey: "gps_lat") as? Double {
+                        self.entity.gps_lat = gps_lat
+                    }
+                    if let gps_long = result.value(forKey: "gps_long") as? Double {
+                        self.entity.gps_long = gps_long
+                    }
+                    if let rate_count = result.value(forKey: "rate_count") as? Int {
+                        self.entity.rate_count = rate_count
+                    }
+                    if let picture = result.value(forKey: "picture") as? Data {
+                        self.entity.picture = (UIImage(data:picture))!
+                    }
+                }
+                self.presenter.updateRestaurantView()
+            } else {
+                print("No Data No Network")
+                self.presenter.errorRestaurantView(errorMessage: "No Data And No Network")
+            }
+        } catch {
+            print("No Data No Network")
+            self.presenter.errorRestaurantView(errorMessage: "No Data And No Network")
+        }
+    }
+    
     // Recupérer les informations du restaurant de l'API
     
     func updateList() {
@@ -149,7 +199,8 @@ class RestaurantsInteractor: RestaurantsInteractorProtocol {
                     self.presenter.errorRestaurantView(errorMessage: "Erreur URL/API")
                 }
             } else {
-                
+                print("ici")
+                self.takeInformationFromCoreDate()
             }
         }
     }

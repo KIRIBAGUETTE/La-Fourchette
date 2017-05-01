@@ -13,6 +13,7 @@ import MapKit
 class MapCollectionViewCell: UICollectionViewCell{
     
     var map:MKMapView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
