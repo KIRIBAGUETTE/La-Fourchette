@@ -5,4 +5,5 @@ target 'La Fourchette' do
 
   pod 'Alamofire', '~> 4.0'
   pod 'SwiftyJSON', '~> 3.0.0'
+  pod 'SnapKit', '~> 3.2.0'
 end

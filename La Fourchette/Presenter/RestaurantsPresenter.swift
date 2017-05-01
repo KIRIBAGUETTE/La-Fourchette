@@ -31,6 +31,9 @@ class RestaurantsPresenter: RestaurantsPresenterViewProtocol, RestaurantsPresent
     //Reference vers l'interface Router
     var router:RestaurantsRouterProtocol!
     
+    //Reference vers l'interface Entity
+    var entity:RestaurantsEntity!
+    
     func updateDataInformation() {
         print("DATAS : UPDATE")
         self.interactor.updateList()

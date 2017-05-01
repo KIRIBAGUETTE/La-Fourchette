@@ -13,14 +13,18 @@ import CoreData
 protocol RestaurantsInteractorProtocol {
     func updateList()
     func deserialiseList(Json:JSON)
-    func stockList(restaurant:RestaurantsEntity)
+    func stockList()
 }
 
 class RestaurantsInteractor: RestaurantsInteractorProtocol {
     
-    // Liens vers l'interface Presenter
+    // Lien vers l'interface Presenter
     
     var presenter:RestaurantsPresenter!
+    
+    // Lien vers l'interface Entity
+    
+    var entity:RestaurantsEntity!
     
     let url:String = "https://api.lafourchette.com/api?key=IPHONEPRODEDCRFV&method=restaurant_get_info&id_restaurant=6861"
     
@@ -29,32 +33,31 @@ class RestaurantsInteractor: RestaurantsInteractorProtocol {
     func deserialiseList(Json:JSON) {
         print("DATAS : DESERIALISATION")
         if Json["result"].int == 1 {
-            let restaurant:RestaurantsEntity = RestaurantsEntity()
             if let name = Json["data"]["name"].string {
-                restaurant.name = name
+                self.entity.name = name
             }
             if let address = Json["data"]["address"].string {
-                restaurant.address = address
+                self.entity.address = address
             }
             if let zipcode = Json["data"]["zipcode"].string {
-                restaurant.zipcode = zipcode
+                self.entity.zipcode = zipcode
             }
             if let city = Json["data"]["city"].string {
-                restaurant.city = city
+                self.entity.city = city
             }
             if let avg_rate = Json["data"]["avg_rate"].double {
-                restaurant.avg_rate = avg_rate
+                self.entity.avg_rate = avg_rate
             }
             if let gps_long = Json["data"]["gps_long"].double {
-                restaurant.gps_long = gps_long
+                self.entity.gps_long = gps_long
             }
             if let gps_lat = Json["data"]["gps_lat"].double {
-                restaurant.gps_lat = gps_lat
+                self.entity.gps_lat = gps_lat
             }
             if let rate_count = Json["data"]["rate_count"].int {
-                restaurant.rate_count = rate_count
+                self.entity.rate_count = rate_count
             }
-            self.stockList(restaurant:restaurant)
+            self.stockList()
         } else {
             self.presenter.errorRestaurantView(errorMessage: "Erreur API")
         }
@@ -88,21 +91,21 @@ class RestaurantsInteractor: RestaurantsInteractorProtocol {
         }
     }
     
-    func stockList(restaurant:RestaurantsEntity) {
+    func stockList() {
         print("DATAS : STOCK CORE DATA")
         self.checkCoreData()
         
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let newRetaurant = NSEntityDescription.insertNewObject(forEntityName: "Restaurant", into: context)
-        newRetaurant.setValue(restaurant.name, forKey: "name")
-        newRetaurant.setValue(restaurant.address, forKey: "address")
-        newRetaurant.setValue(restaurant.zipcode, forKey: "zipcode")
-        newRetaurant.setValue(restaurant.city, forKey: "city")
-        newRetaurant.setValue(restaurant.avg_rate, forKey: "avg_rate")
-        newRetaurant.setValue(restaurant.gps_lat, forKey: "gps_lat")
-        newRetaurant.setValue(restaurant.gps_long, forKey: "gps_long")
-        newRetaurant.setValue(restaurant.rate_count, forKey: "rate_count")
+        newRetaurant.setValue(self.entity.name, forKey: "name")
+        newRetaurant.setValue(self.entity.address, forKey: "address")
+        newRetaurant.setValue(self.entity.zipcode, forKey: "zipcode")
+        newRetaurant.setValue(self.entity.city, forKey: "city")
+        newRetaurant.setValue(self.entity.avg_rate, forKey: "avg_rate")
+        newRetaurant.setValue(self.entity.gps_lat, forKey: "gps_lat")
+        newRetaurant.setValue(self.entity.gps_long, forKey: "gps_long")
+        newRetaurant.setValue(self.entity.rate_count, forKey: "rate_count")
         do {
             print("COREDATA : INSERT DATA")
             try context.save()

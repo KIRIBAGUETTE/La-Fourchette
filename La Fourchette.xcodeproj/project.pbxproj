@@ -16,6 +16,8 @@
 		523E73041EB7858C00705329 /* RestaurantsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E73031EB7858C00705329 /* RestaurantsInteractor.swift */; };
 		523E73061EB78DFD00705329 /* RestaurantsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E73051EB78DFD00705329 /* RestaurantsPresenter.swift */; };
 		523E73081EB79B3B00705329 /* RestaurantsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E73071EB79B3B00705329 /* RestaurantsRouter.swift */; };
+		52729F0C1EB7C41A00462D84 /* PictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52729F0B1EB7C41A00462D84 /* PictureCollectionViewCell.swift */; };
+		52729F0E1EB7E1D100462D84 /* MapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52729F0D1EB7E1D100462D84 /* MapCollectionViewCell.swift */; };
 		6E3DC3F1CC5C7D4225CCAA82 /* Pods_La_Fourchette.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2559B9CF43435E333D299604 /* Pods_La_Fourchette.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		523E73031EB7858C00705329 /* RestaurantsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestaurantsInteractor.swift; path = Interactor/RestaurantsInteractor.swift; sourceTree = "<group>"; };
 		523E73051EB78DFD00705329 /* RestaurantsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestaurantsPresenter.swift; path = Presenter/RestaurantsPresenter.swift; sourceTree = "<group>"; };
 		523E73071EB79B3B00705329 /* RestaurantsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestaurantsRouter.swift; path = Router/RestaurantsRouter.swift; sourceTree = "<group>"; };
+		52729F0B1EB7C41A00462D84 /* PictureCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureCollectionViewCell.swift; path = View/PictureCollectionViewCell.swift; sourceTree = "<group>"; };
+		52729F0D1EB7E1D100462D84 /* MapCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapCollectionViewCell.swift; path = View/MapCollectionViewCell.swift; sourceTree = "<group>"; };
 		5879F8E91A20BA3324BCC350 /* Pods-La Fourchette.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La Fourchette.release.xcconfig"; path = "Pods/Target Support Files/Pods-La Fourchette/Pods-La Fourchette.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				523E72E91EB655B600705329 /* ViewController.swift */,
+				52729F0B1EB7C41A00462D84 /* PictureCollectionViewCell.swift */,
+				52729F0D1EB7E1D100462D84 /* MapCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -262,10 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52729F0C1EB7C41A00462D84 /* PictureCollectionViewCell.swift in Sources */,
 				522676B51EB7A3CA008FF961 /* RootRouter.swift in Sources */,
 				523E73021EB77D6200705329 /* RestaurantsEntity.swift in Sources */,
 				523E73061EB78DFD00705329 /* RestaurantsPresenter.swift in Sources */,
 				523E72F01EB655B600705329 /* La_Fourchette.xcdatamodeld in Sources */,
+				52729F0E1EB7E1D100462D84 /* MapCollectionViewCell.swift in Sources */,
 				523E72EA1EB655B600705329 /* ViewController.swift in Sources */,
 				523E72E81EB655B600705329 /* AppDelegate.swift in Sources */,
 				523E73041EB7858C00705329 /* RestaurantsInteractor.swift in Sources */,

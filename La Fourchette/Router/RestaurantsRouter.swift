@@ -22,12 +22,16 @@ class RestaurantsRouter: RestaurantsRouterProtocol {
         let presenter = RestaurantsPresenter()
         let interactor = RestaurantsInteractor()
         let router = RestaurantsRouter()
+        let entity = RestaurantsEntity()
         
         view.presenter = presenter
+        view.entity = entity
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
+        presenter.entity = entity
         interactor.presenter = presenter
+        interactor.entity = entity
         router.viewController = view
         return view
     }
